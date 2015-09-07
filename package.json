@@ -1,0 +1,25 @@
+{
+  "name": "soccermatters",
+  "version": "1.0.0",
+  "description": "Player Relationship Management",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingluddite/soccermatters.com.git"
+  },
+  "keywords": [
+    "soccer",
+    "administration",
+    "schedule",
+    "league"
+  ],
+  "author": "Philip Howley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kingluddite/soccermatters.com/issues"
+  },
+  "homepage": "https://github.com/kingluddite/soccermatters.com"
+}

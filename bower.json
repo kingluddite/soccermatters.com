@@ -1,0 +1,29 @@
+{
+  "name": "soccermatters",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kingluddite/soccermatters.com",
+  "authors": [
+    "pip_lineupbuilder <howley.phil@gmail.com>"
+  ],
+  "description": "Player Relationship Management",
+  "keywords": [
+    "soccer",
+    "tool",
+    "administration"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.4.5",
+    "angular-route": "~1.4.5",
+    "animate.css": "~3.4.0",
+    "font-awesome": "~4.4.0"
+  }
+}
