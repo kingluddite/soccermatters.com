@@ -1,28 +1,45 @@
-// grab our gulp packages
-var gulp       = require('gulp'),
-    gutil      = require('gulp-util'),
-    sass       = require('gulp-sass'),
-    minifyCSS  = require('gulp-minify-css'),
-    rename     = require('gulp-rename'),
-    jshint     = require('gulp-jshint'),
-    stylish    = require('jshint-stylish'),
-    notify     = require('gulp-notify'),
-    include    = require('gulp-include'),
-    livereload = require('gulp-livereload'),
-    concat     = require('gulp-concat'),
-    uglify     = require('gulp-uglify'),
-    ngAnnotate = require('gulp-ng-annotate'),
-    plumber    = require('gulp-plumber');
+// load the plugins
+var gulp      = require('gulp'),
+// var less   =  require('gulp-less'),
+   plumber    = require('gulp-plumber'),
+   gulp       = require('gulp-util'),
+   clean      = require('gulp-clean'),
+   browserify = require('gulp-browserify'),
+   watch      = require('gulp-watch'),
+   livereload = require('gulp-livereload'),
+   minifyCSS  = require('gulp-minify-css'),
+   rename     = require('gulp-rename'),
+   jshint     = require('gulp-jshint'),
+   stylish    = require('jshint-stylish'),
+   notify     = require('gulp-notify'),
+   include    = require('gulp-include'),
+   sass       = require('gulp-sass'),
+   concat     = require('gulp-concat'),
+   uglify     = require('gulp-uglify'),
+   ngAnnotate = require('gulp-ng-annotate'),
+   nodemon    = require('gulp-nodemon');
+
 
 var onError = function( err ) {
   console.log( 'An error occurred:', err.message );
   this.emit( 'end' );
 }
 
-// // create a default task and just log a message
-// gulp.task('default', function() {
-//   return gutil.log('Gulp is running!')
-// });
+// the nodemon task
+gulp.task('nodemon', function() {
+  nodemon({
+    script: 'server.js',
+    ext: 'js scss html'
+  })
+  .on('start', ['watch'])
+  .on('change', ['watch'])
+  .on('restart', function() {
+    console.log('Restarted!');
+  });
+});
+
+// defining the main gulp task
+gulp.task('default', ['nodemon']);
 
 gulp.task('watch', function() {
   // watch the sass file and run the css task
@@ -64,17 +81,3 @@ gulp.task('js', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
-
-// define a task called css
-gulp.task('scss', function() {
-
-  // grab the sass file, process the SASS, save to style.css
-  return gulp.src('public/assets/css/scss/style.scss')
-        .pipe( plumber( { errorHandler: onError } ) )
-        .pipe( sass() )
-        .pipe( gulp.dest( '.' ) )
-        .pipe( minifyCSS() )
-        .pipe( rename( { suffix: '.min' } ) )
-        .pipe( gulp.dest( 'public/assets/css' ) )
-        .pipe( livereload() );
-} );

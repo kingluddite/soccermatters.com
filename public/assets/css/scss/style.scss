@@ -1,16 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
-@import "../../libs/normalize-scss/_normalize.scss";
+@import "color_variables";
+@import "override_bs";
 
 
-/*========================================
-=            Define Variables            =
-========================================*/
 
-$aqua: #105B63;
-$light-yellow: #FFD34E;
-$mustard-yellow: #FFFAD5;
-$white: #FFFFFF;
-$orange: #BD4932;
 
 /*======================================
 =            General Styles            =
@@ -177,9 +170,9 @@ html {
   /*Image only BG fallback*/
   // background: url('http://thecodeplayer.com/uploads/media/gs.png');
   /*background = gradient + image pattern combo*/
-  
+
   // background: linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), url('http://thecodeplayer.com/uploads/media/gs.png');
-} 
+}
 
 /*form styles*/
 
@@ -270,7 +263,7 @@ html {
   margin-bottom: 30px;
   overflow: hidden;
   /*CSS counters to number the steps*/
-  
+
   counter-reset: step;
 
   li {
@@ -305,12 +298,12 @@ html {
       left: -50%;
       top: 9px;
       z-index: -1;
-      /*put it behind the numbers*/     
+      /*put it behind the numbers*/
     }
 
     &:first-child:after {
       /*connector not needed before the first step*/
-  
+
       content: none;
     }
   }
