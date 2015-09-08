@@ -1,19 +1,35 @@
 // load the plugins
-var gulp = require('gulp');
-var less = require('gulp-less');
-var minifyCSS = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var jshint = require('gulp-jshint');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var ngAnnotate = require('gulp-ng-annotate');
-var nodemon = require('gulp-nodemon');
+var gulp      = require('gulp'),
+// var less   =  require('gulp-less'),
+   plumber    = require('gulp-plumber'),
+   gulp       = require('gulp-util'),
+   clean      = require('gulp-clean'),
+   browserify = require('gulp-browserify'),
+   watch      = require('gulp-watch'),
+   livereload = require('gulp-livereload'),
+   minifyCSS  = require('gulp-minify-css'),
+   rename     = require('gulp-rename'),
+   jshint     = require('gulp-jshint'),
+   stylish    = require('jshint-stylish'),
+   notify     = require('gulp-notify'),
+   include    = require('gulp-include'),
+   sass       = require('gulp-sass'),
+   concat     = require('gulp-concat'),
+   uglify     = require('gulp-uglify'),
+   ngAnnotate = require('gulp-ng-annotate'),
+   nodemon    = require('gulp-nodemon');
+
+
+var onError = function( err ) {
+  console.log( 'An error occurred:', err.message );
+  this.emit( 'end' );
+}
 
 // the nodemon task
 gulp.task('nodemon', function() {
   nodemon({
     script: 'server.js',
-    ext: 'js less html'
+    ext: 'js scss html'
   })
   .on('start', ['watch'])
   .on('change', ['watch'])
@@ -26,11 +42,17 @@ gulp.task('nodemon', function() {
 gulp.task('default', ['nodemon']);
 
 gulp.task('watch', function() {
-  // watch the less file and run the css task
-  gulp.watch('public/assets/css/style.less', ['css']);
+  // watch the sass file and run the css task
+  // gulp.watch('public/assets/css/style.scss', ['scss']);
+  livereload.listen();
+  gulp.watch( 'public/assets/**/*.scss', [ 'scss'] );
 
   gulp.watch(['server.js', 'public/app/*.js', 'public/app/**/*.js'], ['js', 'angular']);
-});
+
+  gulp.watch( './**/*.js' ).on( 'change', function( file ) {
+    livereload.changed( file );
+  } );
+} );
 
 gulp.task('angular', function() {
   return gulp.src(['public/assets/libs/angular/angular.js', 'public/assets/libs/angular-route/angular-route.js', 'public/assets/libs/angular-animate/angular-animate.js', 'public/app/*.js', 'public/app/**/*.js'])
@@ -61,12 +83,15 @@ gulp.task('js', function() {
 });
 
 // define a task called css
-gulp.task('css', function() {
+gulp.task('scss', function() {
 
-  // grab the less file, process the LESS, save to style.css
-  return gulp.src('public/assets/css/style.less')
-        .pipe(less())
-        .pipe(minifyCSS())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('public/assets/css'));
-});
+  // grab the sass file, process the SASS, save to style.css
+  return gulp.src('public/assets/css/scss/style.scss')
+        .pipe( plumber( { errorHandler: onError } ) )
+        .pipe( sass() )
+        .pipe( gulp.dest( '.' ) )
+        .pipe( minifyCSS() )
+        .pipe( rename( { suffix: '.min' } ) )
+        .pipe( gulp.dest( 'public/assets/css' ) )
+        .pipe( livereload() );
+} );

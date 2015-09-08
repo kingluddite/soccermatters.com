@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-step form</title>
+  <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/multi_step_form.css">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+</head>
+<body>
+  <img id="logo" src="images/sm_logo.png" height="200" width="200" alt="SoccerMatters Logo">
+<!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Start Date</li>
+    <li>Season Length</li>
+    <li>Game Days</li>
+    <li>Game Times</li>
+    <li>Divisions</li>
+    <li>Teams</li>
+    <li>Holidays</li>
+    <li>Review</li>
+    <li>Generate</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">When does your season start?</h2>
+    <h3 class="fs-subtitle"><em>(Click in text box for calender)</em></h3>
+    <input type="text" id="datepicker" name="startDate" placeholder="07/01/2015" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">How Long Is Your Season </h2>
+    <h3 class="fs-subtitle">(weeks)</h3>
+    <input type="text" name="numWeeks" placeholder="11" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+
+  <!-- <fieldset>
+    <h2 class="fs-title">Game Days</h2>
+    <h3 class="fs-subtitle"><em>(Check the days below that apply)</em></h3>
+    <input type="text" name="numWeeks" placeholder="11" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset> -->
+  <!-- <fieldset>
+    <h2 class="fs-title">Division Information</h2>
+    <h3 class="fs-subtitle"></h3>
+    <label for="">How many Divisions?</label>
+    <input type="text" name="numDivisions" placeholder="1" />
+    <label for="">Will there be interdivision play?</label>
+    <input type="text" name="interdivsionPlay" placeholder="Yes" />
+    
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset> -->
+
+  <fieldset>
+    <h2 class="fs-title">Division Information</h2>
+    <h3 class="fs-subtitle"></h3>
+    <label for="">How many Divisions?</label>
+    <input type="text" name="numDivisions" placeholder="1" />
+    <label for="">Will there be interdivision play?</label>
+    <input type="text" name="interdivsionPlay" placeholder="Yes" />
+    
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+
+  <!-- <label for="">Enter the teams in division A</label>
+    <textarea name="divA" placeholder="team1 team2"></textarea>
+    <label for="">Enter the teams in division B</label>
+    <textarea name="divB" placeholder="Address"></textarea> -->
+</form>
+      <footer class="footer">
+        <div class="container">
+          <h1>SoccerMatters</h1>
+          <h2>Because Soccer Does Matter</h2>
+        </div>
+      </footer>
+<!-- jQuery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery easing plugin -->
+<script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+<script src="js/multi_step_form.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+$(function() {
+    $( "#datepicker" ).datepicker({
+      inline: true
+    });
+  });
+</script>
+</body>
+</html>

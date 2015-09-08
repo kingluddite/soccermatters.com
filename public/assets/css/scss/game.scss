@@ -1,0 +1,248 @@
+/*====================================
+=            Game Styling            =
+====================================*/
+/* old css code */
+#scores-page a {
+  color: #FFD34E;
+  font-weight: bold;
+}
+strong {
+  color: #105B63;
+}
+.game-info strong {
+  color: #FFD34E;
+}
+
+#scores-page #score-leagues {
+  position: relative;
+  z-index: 5;
+  background: #faebd7;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+}
+
+#scores-page a.score-table-link.first {
+  right: 33.333%;
+}
+
+#scores-page h4 {
+  padding: 20px 0 20px 20px;
+  font: 18px/18px "BentonSansBold", Helvetica, Arial, sans-serif;
+}
+
+#scores-page .score-group {
+  clear: both;
+}
+
+#scores-page .score-group p {
+  padding: 20px 0;
+  margin: 0 20px;
+  border-top: 1px solid #e6e6e6;
+  font: 12px/12px "BentonSansBold", Helvetica, Arial, sans-serif;
+}
+
+.score .scorebox-container.upcoming,
+.score .score-links.upcoming {
+  background: #faebd7;
+  border-color: #e6e6e6;
+  color: #4c4e52;
+}
+
+#scores-page .score-box {
+  padding: 0 10px;
+}
+
+#scores-page .score {
+  width: 100%;
+  margin: 0 auto 20px auto;
+  background-color: #fff;
+}
+
+
+.page-title {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.score-box {
+  float: left;
+  // width: 50%; removed to make it look cool on phones
+  padding: 0 16px 32px 0;
+  box-sizing: border-box;
+}
+
+.score {
+  position: relative;
+}
+
+.score .scorebox-container {
+  position: relative;
+}
+
+.score .scorebox-container,
+.score .score-links {
+  padding: 0 17.85px;
+}
+
+.score .scorebox-container.complete,
+.score .score-links.complete {
+  background: #FFFADS;
+  border-color: #f6f6f6;
+  color: #4c4e52;
+}
+
+.score .scorebox-container,
+.score .score-links {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+}
+
+div.score-content {
+  display: table;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.score .scorebox-container .score-content,
+.score .score-links .score-content {
+  height: 72px;
+  margin: 21px 0;
+}
+
+.score .scorebox-container .score-content {
+  display: table;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.score .scorebox-container .score-content .team-names {
+  width: 100%;
+}
+
+.score .scorebox-container .score-content .team-name,
+.score .scorebox-container .score-content .team-score {
+  position: relative;
+  height: 50%;
+}
+
+.score .scorebox-container .team-name,
+.score-links .team-name {
+  font-style: 14px;
+}
+
+.score .scorebox-container .score-content .team-names .team-name span {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  bottom: 0;
+  left: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.score .scorebox-container .score-content .team-names,
+.score .scorebox-container .score-content .team-scores,
+.score .scorebox-container .score-content .game-info {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.score .scorebox-container .score-content .team-scores .team-score.winner {
+  //font-family: some bold font
+  font-weight: bold;
+}
+
+.score .scorebox-container.complete .team-score.winner,
+.score .score-links.complete .team-score.winner {
+  border-color: #4c4e52;
+}
+
+.score .scorebox-container .score-content .team-scores .team-score {
+  text-align: right;
+}
+
+.score .scorebox-container .score-content .team-name,
+.score .scorebox-container .score-content .team-score {
+  position: relative;
+  height: 50%;
+}
+
+.score .scorebox-container .team-score,
+.score .score-links .team-score {
+  padding-right: 16.85px;
+}
+
+.score .scorebox-container .team-score,
+.score .score-links .team-score {
+  font-size: 16px
+}
+
+.score .team-score.winner {
+  -transition: border-color .25s;
+  transition: border-color .25s;
+}
+
+.score .scorebox-container .score-content .team-scores .team-score.winner:after {
+  content: "";
+  display: block;
+  border-style: solid;
+  border-width: 5px 6px 5px 0;
+  border-color: transparent;
+  border-right-color: inherit;
+  margin-top: -6px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+.score .scorebox-container.complete .game-info,
+.score .scorebox-container.complete .extra-game-info,
+.score .score-links.complete .game-info,
+.score .score-links.complete .extra-game-info {
+  border-color: #e4e5e7;
+  color: #9ea3ae;
+}
+
+.score .scorebox-container .score-content .game-info {
+  width: 20%;
+  border-left-width: 1px;
+  border-left-style: solid;
+  padding-right: 3px;
+}
+
+.score .scorebox-container .score-content .team-names,
+.score .scorebox-container .score-content .team-scores,
+.score .scorebox-container .score-content .game-info {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.score .scorebox-container .game-info,
+.score .score-links .game-info {
+  padding-left: 17.85px;
+}
+
+.score .scorebox-container .game-info,
+.score .score-links .game-info {
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.score .scorebox-container .score-content .game-info span {
+  display: block;
+}
+
+.score .scorebox-container .game-info,
+.score .score-links .game-info {
+  font-size: 11px;
+  line-height: 1.8;
+}

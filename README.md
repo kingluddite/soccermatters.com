@@ -12,6 +12,7 @@ https://github.com/crystalschang/gulp-env
 ## Technologies Used
 * HTML5
 * MEAN Stack (MongoDB, Express, Angular, NodeJS)
+* Angular 2.0
 * CSS3
 * Bower
 * Twitter Bootstrap 4
@@ -20,6 +21,10 @@ https://github.com/crystalschang/gulp-env
 * jQuery
 * Hand coded JavaScript
 * AJAX
+* SASS
+* jshint
+* Mongoose
+* LibSass
 * Gulp
 * Sublime Text 3 (IDE)
 * Adobe Kuler (Color Scheme)
