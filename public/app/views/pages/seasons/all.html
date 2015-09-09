@@ -1,0 +1,13 @@
+<h1>{{season.pageTitle}}</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="season in season.mySeasons">
+      <td><a href="/seasons/{{season._id}}">{{ season.date }}</a></td>
+    </tr>
+  </tbody>
+</table>

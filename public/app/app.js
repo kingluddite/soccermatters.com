@@ -22,9 +22,31 @@ angular.module('smApp', ['routerRoutes'])
 
 })
 
-.controller('stinkyController', function() {
+.controller('mySeasonsController', function($http) {
     var vm = this;
     vm.pageTitle = "My Seasons";
+
+    $http.get('/api/seasons')
+      .then(function(data) {
+        // bind the seasons we receive to vm.seasons
+        vm.mySeasons = data.data;
+        // console.log(vm.mySeasons);
+      });
+
+})
+
+.controller('mySeasonController', function($http, $routeParams) {
+        // console.log($routeParams.season_id);
+    var seasonId = $routeParams.season_id;
+    var vm = this;
+    vm.pageTitle = "My Season";
+
+    $http.get('/api/seasons/' + seasonId)
+      .then(function(data) {
+        // bind the seasons we receive to vm.seasons
+        vm.mySeason = data.data.fullSeason;
+        // console.log(data);
+      });
 
 })
 

@@ -19,12 +19,21 @@ angular.module('routerRoutes', ['ngRoute'])
         controllerAs: 'about'
     })
 
-    // route for the season page
-    .when('/stinky', {
-        templateUrl: 'app/views/pages/season.html',
-        controller: 'stinkyController',
-        controllerAs: 'stinky'
+    // route for the seasons page
+    .when('/seasons', {
+        templateUrl: 'app/views/pages/seasons/all.html',
+        controller: 'mySeasonsController',
+        controllerAs: 'season'
     })
+
+    // route for the individual season page
+    .when('/seasons/:season_id', {
+        templateUrl: 'app/views/pages/seasons/single.html',
+        controller: 'mySeasonController',
+        controllerAs: 'season'
+    })
+
+
 
     // route for the about page
     .when('/teams', {

@@ -52,6 +52,24 @@ module.exports = function(app, express) {
       res.json(seasons);
     });
   });
+
+  // GET A SINGLE Season
+  // on routes that end in /users/:user_id
+  // ------------------------------------------------------------ 
+  apiRouter.route('/seasons/:season_id')
+
+  // get the user with that id
+  // (accessed at GET http://localhost:8080/api/users/:user_id)
+  .get(function(req, res) {
+    Season.findById(req.params.season_id, function(err, user) {
+      if (err) {
+        res.send(err);
+      }
+
+      // return that user
+      res.json(user);
+    });
+  })
   
 
 
