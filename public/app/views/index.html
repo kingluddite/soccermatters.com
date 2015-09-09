@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,7 +10,19 @@
     <!-- set the base path for angular routing -->
     <base href="/">
     <!-- Place favicon.ico in the root directory -->
-
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="SoccerMatters">
+    <meta name="application-name" content="SoccerMatters">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"> -->
     <link rel="stylesheet" href="/assets/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/libs/font-awesome/css/font-awesome.min.css">
@@ -27,46 +39,46 @@
     <script src="/assets/libs/moment/min/moment.min.js"></script>
     <script src="/assets/js/main.js"></script>
 
-</head>
+  </head>
 
-<body class="container" ng-app="smApp" ng-controller="mainController as main">
-    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-        <a class="navbar-brand" href="/">SM</a>
-        <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/scheduler">Scheduler</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/fields">Fields</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/seasons">My Seasons</a>
-            </li>
-            <li class="nav-item pull-right">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item pull-right">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
+  <body ng-app="smApp" ng-controller="mainController as main">
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded clearfix">
+      <a class="navbar-brand" href="/"><img src="/assets/img/logo_50x50_shield.png" height="117" width="100" alt="Soccer Matters Logo Shield"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/scheduler">Scheduler</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/fields">Fields</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/seasons">My Seasons</a>
+        </li>
+        <li class="nav-item pull-right">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item pull-right">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
 
-        </ul>
+      </ul>
     </nav>
 
-    <div class="container">
-        <main>
-            <div ng-view></div>
-        </main>
+    <div class="container clearfix">
+      <main>
+        <div ng-view></div>
+      </main>
     </div>
     <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
-        <a class="navbar-brand" href="/"><em>Because Soccer Does Matter</em></a>
+      <a class="navbar-brand" href="/"><em>Because Soccer Does Matter</em></a>
     </nav>
-</body>
-
+  </body>
 
 </html>
+

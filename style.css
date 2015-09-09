@@ -5,12 +5,17 @@
 .bg-faded {
   background-color: #BD4932; }
 
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: rgba(245, 245, 245, 0.8); }
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(245, 245, 245, 0.8); }
+
 /*======================================
 =            General Styles            =
 ======================================*/
 body {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 140px;
   background-color: #105B63;
   font-family: montserrat, arial, verdana; }
 
