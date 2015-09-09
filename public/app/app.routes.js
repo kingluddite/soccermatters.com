@@ -30,7 +30,7 @@ angular.module('routerRoutes', ['ngRoute'])
     .when('/seasons/:season_id', {
         templateUrl: 'app/views/pages/seasons/single.html',
         controller: 'mySeasonController',
-        controllerAs: 'season'
+        controllerAs: 'game'
     })
 
 
