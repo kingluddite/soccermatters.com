@@ -66,6 +66,12 @@ angular.module('routerRoutes', ['ngRoute'])
         templateUrl: 'app/views/pages/fields/field.html',
         controller: 'fieldController',
         controllerAs: 'field'
+    })
+    
+    // fallback mechanism that applies to all requests that do not
+    //  match the above predefined routes
+    .otherwise({
+        redirecTo: '/'
     });
 
 
