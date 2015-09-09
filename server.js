@@ -2,19 +2,19 @@
 // ==================================
 
 // CALL THE PACKAGES ----------------
-var express       = require('express'),
-    path          = require('path'),
-    favicon       = require('serve-favicon'),
-    logger        = require('morgan'),
-    cookieParser  = require('cookie-parser'),
-    bodyParser    = require('body-parser'), // get body-parser
-    morgan        = require('morgan'), // used to see requests
-    mongoose      = require('mongoose'), // db helper
-    config        = require('./config');
-    // passport = require('passport'),
-    // session = require('express-session'),
-    // authenticate = require('./routes/authenticate')(passport);
-    // jwt           = require('jsonwebtoken');
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'), // get body-parser
+    morgan = require('morgan'), // used to see requests
+    mongoose = require('mongoose'), // db helper
+    config = require('./config');
+// passport = require('passport'),
+// session = require('express-session'),
+// authenticate = require('./routes/authenticate')(passport);
+// jwt           = require('jsonwebtoken');
 
 // TODO DO YOU NEED TO INCLUDE ANY MODELS?
 // require('./models/models.js');
@@ -25,8 +25,8 @@ var express       = require('express'),
 
 // check that MongoD is running...
 require('net').connect(27017, 'localhost').on('error', function() {
-  console.log("You forgot to start MonGOD or mongo-D or whatever the hell that thing is called!");
-  process.exit(0);
+    console.log("You forgot to start MonGOD or mongo-D or whatever the hell that thing is called!");
+    process.exit(0);
 });
 
 /*==============================
@@ -64,23 +64,25 @@ var app = express();
 
 app.use(logger('dev'));
 // use body parser so we can grab information from POST requests
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 /*----------  configure our app to handle CORS requests  ----------*/
 // Cross-Origin Resource Sharing (CORS)
-// allow requests from other domains to prevent CORS errors 
+// allow requests from other domains to prevent CORS errors
 //   allows any domain to access our API
 /*=====  End of APP CONFIGURATION  ======*/
 
 app.use(function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-  res.setHeader('Access-Control-Allow-Headers',
-    'X-Requested-With,content-type, Authorizartion');
-  next();
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Headers',
+        'X-Requested-With,content-type, Authorizartion');
+    next();
 });
 app.use(cookieParser());
-// set the public folder to server public assets
+// set the public folder to serve public assets
 app.use(express.static(path.join(__dirname, 'public')));
 // needs to be passport.initialize first
 // and then passport.session second
@@ -118,14 +120,14 @@ app.use(morgan('dev'));
 // SEND USERS TO FRONTEND
 // has to be registered AFTER API ROUTES
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
+    res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -133,23 +135,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 
@@ -160,6 +162,6 @@ module.exports = app;
 ========================================*/
 
 // START THE SERVER
-// ================================== 
+// ==================================
 app.listen(config.port);
 console.log('SoccerMatters! ' + config.port);

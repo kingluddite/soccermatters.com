@@ -2,68 +2,73 @@
 <html lang="en" class="no-js">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>SoccerMatters</title>
-  <meta name="description" content="Player Relationship Management (PRM) for Amateur Soccer Leagues around the globe.">
-  <!-- Place favicon.ico in the root directory -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SoccerMatters</title>
+    <meta name="description" content="Player Relationship Management (PRM) for Amateur Soccer Leagues around the globe.">
+    <!-- set the base path for angular routing -->
+    <base href="/">
+    <!-- Place favicon.ico in the root directory -->
 
-   <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="/assets/libs/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/assets/libs/animate.css/animate.min.css">
-  <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="/assets/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/libs/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
 
-  <script src="/assets/libs/angular/angular.min.js"></script>
-<script src="/assets/libs/angular-route/angular-route.min.js"></script>
-<script src="/assets/libs/angular-animate/angular-animate.min.js"></script>
-<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
-<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-<script src="/assets/libs/moment/min/moment.min.js"></script>
-<script src="/assets/js/app.js"></script>
-<script src="/assets/js/main.js"></script>
-
-  <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
-
-    <!-- jQuery CDN with local fallback -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-  <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script> -->
-
-  <!-- Angular CDN with local fallback -->
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-  <script>window.angular || document.write('<script src="js/vendor/angular-1.4.4.min.js"><\/script>')</script> -->
+    <script src="/assets/libs/angular/angular.min.js"></script>
+    <script src="/assets/libs/angular-route/angular-route.min.js"></script>
+    <script src="/assets/libs/angular-animate/angular-animate.min.js"></script>
+    <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/app.routes.js"></script>
+    <script src="/assets/libs/moment/min/moment.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
 </head>
 
 <body class="container" ng-app="smApp" ng-controller="mainController as main">
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-  <a class="navbar-brand" href="#">SM</a>
-  <ul class="nav navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Schedules</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Fields</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
-    </li>
-  </ul>
-  <form class="form-inline navbar-form pull-right">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success-outline" type="submit">Search</button>
-  </form>
-</nav>
-<!-- <h1>{{main.pageTitle}}</h1> -->
-<div class="container">
-  <ng-view></ng-view>
-</div>
-<nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
-  <a class="navbar-brand" href="#"><em>Because Soccer Does Matter</em></a>
-</nav>
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+        <a class="navbar-brand" href="/">SM</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/scheduler">Scheduler</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/fields">Fields</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item pull-right">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item pull-right">
+                <a class="nav-link" href="/register">Register</a>
+            </li>
+
+        </ul>
+        <form class="form-inline navbar-form pull-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+        </form>
+    </nav>
+    <!-- <img id="logo" src="/assets/img/sm_logo.png" height="200" width="200" alt="SoccerMatters Logo">
+ -->
+    <h1>{{main.pageTitle}}</h1>
+    <div class="container">
+        <main>
+            <div ng-view></div>
+        </main>
+    </div>
+    <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+        <a class="navbar-brand" href="/"><em>Because Soccer Does Matter</em></a>
+    </nav>
 </body>
 
 
