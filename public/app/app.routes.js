@@ -19,6 +19,13 @@ angular.module('routerRoutes', ['ngRoute'])
         controllerAs: 'about'
     })
 
+    // route for the season page
+    .when('/stinky', {
+        templateUrl: 'app/views/pages/season.html',
+        controller: 'stinkyController',
+        controllerAs: 'stinky'
+    })
+
     // route for the about page
     .when('/teams', {
         templateUrl: 'app/views/pages/teams/team.html',

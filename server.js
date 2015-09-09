@@ -35,6 +35,8 @@ require('net').connect(27017, 'localhost').on('error', function() {
 // loading routes defined in the /routes folder
 // var routes = require('./routes/index');
 // var api = require('./routes/api');
+// var apiRoutes = require('./app/routes/api')(app, express);
+// app.use('/api', apiRoutes);
 // var authenticate = require('./routes/authenticate')(passport);
 
 /*==========================
@@ -112,7 +114,8 @@ app.use(morgan('dev'));
 
 // API ROUTES
 // app.use('/', index); // HOME PAGE YO!
-// var apiRoutes     = require('./app/routes/api')(app, express);
+var apiRoutes     = require('./app/routes/api')(app, express);
+app.use('/api', apiRoutes);
 // app.use('/auth', authenticate);
 // app.use('/api', apiRoutes);
 

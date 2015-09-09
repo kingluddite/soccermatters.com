@@ -22,9 +22,10 @@ angular.module('smApp', ['routerRoutes'])
 
 })
 
-.controller('seasonController', function() {
+.controller('stinkyController', function() {
     var vm = this;
-    vm.pageTitle = "Seasons";
+    vm.pageTitle = "My Seasons";
+
 })
 
 .controller('aboutController', function() {
@@ -42,7 +43,7 @@ angular.module('smApp', ['routerRoutes'])
     vm.pageTitle = "Register";
 })
 
-.controller('schedulerController', function() {
+.controller('schedulerController', function($http) {
     var vm = this;
     vm.pageTitle = "Create A Season Schedule";
     $(document).ready(function() {
@@ -442,7 +443,7 @@ angular.module('smApp', ['routerRoutes'])
 
   // generate output to show the scheduled season is working properly
   $('#createSchedule').on('click', function() {
-    console.log('clicked');
+    // console.log('clicked');
     $('#destroySchedule').prop('disabled', false);
    $('.card-columns').empty();
    // on click generate the schedule
@@ -455,7 +456,17 @@ angular.module('smApp', ['routerRoutes'])
    =======================================================*/
    
     generateSchedule(divisions, gameTimes, 11);
-
+    // console.log(season);
+    // $.post(season);
+    // $.ajax({
+    // url: '/api/seasons',   
+    // type: 'POST',   
+    // contentType: 'application/json',   
+    // data: JSON.stringify(season) //stringify is important
+    // //success: alert(JSON.stringify(season))   
+    // });
+    // $.post("http://localhost:8080/api/seasons", {fullSeason: season});
+    $http.post("/api/seasons", {fullSeason: season});
     // in this loop generate a card for a regular game card
     //  or a holiday card - the 'if' decides to render which one
     $.each(season, function(i, team) {
