@@ -1,4 +1,19 @@
-<h1>{{game.pageTitle}}</h1>
-
-      <div class="card-columns"><div ng-repeat="game in game.mySeasonGames" class="card"><div class="card-header"> Game# {{game.gameNum}}<span class="pull-right text-muted">Week#  {{game.weekNum}}</div><div class="card-block"><blockquote class="card-blockquote text-center"><p> {{game.awayTeam}}<br/> @ <br> {{game.homeTeam}} </p><footer><small class="text-muted">Game Time <cite title="Game Time"> @  {{game.gameTime}}<br> {{game.gameDate | date: fullDate}}</cite></small></footer></blockquote><small class="card-text text-center"></small><small class="pull-left text-muted"> {{game.gameStatus}}</small><small class="pull-right text-muted">Aviation Field</small></div><!--END card --></div>
+<div class="row">
+  <div class="col-xs-6">
+    {{game.pageTitle}}</div>
+  <div class="col-xs-6">
+    <form class="form-inline navbar-form pull-right">
+      <input class="form-control" type="text" ng-model="query" placeholder="Search">
+      <button class="btn btn-success-outline" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+<br>
+<div class="row">
+  <!--  <label>Search</label>
+      <input type="search" class="form-control" ng-model="query" placeholder="search..."> -->
+  <div class="card-columns">
+    <div ng-repeat="game in game.mySeasonGames | filter:query" class="card">
+      <div class="card-header"> Game# {{game.gameNum}}<span class="pull-right text-muted">Week#  {{game.weekNum}}</div><div class="card-block"><blockquote class="card-blockquote text-center"><p> {{game.awayTeam}}<br/> @ <br> {{game.homeTeam}} </p><footer><small class="text-muted">Game Time <cite title="Game Time"> @  {{game.gameTime}}<br> {{game.gameDate | date: fullDate}}</cite></small></footer></blockquote><small class="card-text text-center"></small><small class="pull-left text-muted"> {{game.gameStatus}}</small><small class="pull-right text-muted">Aviation Field</small></div><!--END card --></div>
+</div>
 
