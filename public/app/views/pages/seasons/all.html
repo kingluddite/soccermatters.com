@@ -3,12 +3,17 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+    <th>Name Of Season</th>
+    <th>Date Created</th>
+    <th colspan="2"></th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="season in season.mySeasons">
-      <td><a href="/seasons/{{season._id}}">{{ season.date_created }}</a></td>
-      <td><i class="fa fa-trash-o" ng-click="season.deleteSeason(season._id)"></i></td>
+    <tr ng-repeat="oneSeason in season.mySeasons">
+      <td><a href="/seasons/{{ oneSeason._id }}">{{ oneSeason.title }}</a></td>
+      <td><a href="/seasons/{{ oneSeason._id }}">{{ oneSeason.date_created }}</a></td>
+      <td><a href="#" ng-href="/seasons/{{ oneSeason._id }}"><i class="fa fa-pencil-square-o"></i></a></td>
+      <td><a href="#" ng-click="season.deleteSeason(oneSeason._id)"><i class="fa fa-trash-o"></i></a></td>
     </tr>
   </tbody>
 </table>

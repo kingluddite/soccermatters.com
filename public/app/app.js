@@ -10,6 +10,7 @@ angular.module('smApp', [
     'registerCtrl',
     'schedulerCtrl',
     'teamCtrl',
+    'seasonService'
     ]);
 
 
