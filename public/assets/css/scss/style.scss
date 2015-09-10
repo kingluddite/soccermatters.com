@@ -31,6 +31,13 @@ label {
   color: $aqua;
 }
 
+/* all content has this light transparent box on the bg */
+.view-container {
+   padding: 20px;
+   background: rgb(200, 54, 54); /* The Fallback */
+   background: rgba(255, 255, 255, 0.2); 
+}
+
 #logo {
   display: block;
   margin: auto;

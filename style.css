@@ -32,6 +32,13 @@ h2 {
 label {
   color: #105B63; }
 
+/* all content has this light transparent box on the bg */
+.view-container {
+  padding: 20px;
+  background: #c83636;
+  /* The Fallback */
+  background: rgba(255, 255, 255, 0.2); }
+
 #logo {
   display: block;
   margin: auto; }
@@ -60,6 +67,14 @@ label {
   -webkit-animation: zoomOutDown 0.5s both ease-in;
   -moz-animation: zoomOutDown 0.5s both ease-in;
   animation: zoomOutDown 0.5s both ease-in; }
+
+/*=======================================
+=            Page Animations            =
+=======================================*/
+.show-hide-message.ng-hide-remove {
+  -webkit-animation: zoomIn 0.3s both ease;
+  -moz-animation: zoomIn 0.3s both ease;
+  animation: zoomIn 0.3s both ease; }
 
 /*==============================
 =            footer            =
