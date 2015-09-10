@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 /*----------  field schema  ----------*/
 var SeasonFieldSchema = new Schema({
   fullSeason: Schema.Types.Mixed,
+  title: { type: String, default: "Give Me A Season Name Please" }, 
   date_created: {
     type: Date,
     default: Date.now

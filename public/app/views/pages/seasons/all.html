@@ -8,6 +8,7 @@
   <tbody>
     <tr ng-repeat="season in season.mySeasons">
       <td><a href="/seasons/{{season._id}}">{{ season.date_created }}</a></td>
+      <td><i class="fa fa-trash-o" ng-click="season.deleteSeason(season._id)"></i></td>
     </tr>
   </tbody>
 </table>

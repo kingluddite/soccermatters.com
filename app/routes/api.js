@@ -70,6 +70,50 @@ module.exports = function(app, express) {
       res.json(user);
     });
   })
+
+  // Update a single season with this id
+  .put(function(req, res) {
+
+    // use our season model to find the season we want
+    Season.findById(req.params.season_id, function(err, season) {
+
+      if (err) {
+        res.send(err);
+      }
+
+      // update the season's info only if it is new
+      if (req.body.title) {
+        season.title = req.season.title;
+      }
+
+      // save the season
+      season.save(function(err) {
+        if (err) {
+          res.send(err);
+        }
+
+        // return a message
+        res.json({
+          message: 'Season updated!'
+        });
+      });
+    });
+  })
+
+  // delete a season
+  .delete(function(req, res) {
+    Season.remove({
+      _id: req.params.season_id
+    }, function(err, season) {
+      if (err) {
+        return res.send(err);
+      }
+
+      res.json({
+        message: 'Successfully deleted Season'
+      });
+    });
+  });
   
 
 
