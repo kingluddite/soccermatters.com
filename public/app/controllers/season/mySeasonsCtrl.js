@@ -10,4 +10,4 @@ angular.module('mySeasonsCtrl', [])
         // console.log(vm.mySeasons);
       });
 
-})
+});

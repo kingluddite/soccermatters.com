@@ -9,7 +9,6 @@ angular.module('mySeasonCtrl', [])
       .then(function(data) {
         // bind the seasons we receive to vm.seasons
         vm.mySeasonGames = data.data.fullSeason;
-        console.log(vm.mySeasonGames.awayTeam);
       });
 
-})
+});

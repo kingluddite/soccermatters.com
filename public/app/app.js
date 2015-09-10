@@ -9,7 +9,7 @@ angular.module('smApp', [
     'loginCtrl',
     'registerCtrl',
     'schedulerCtrl',
-    'teamCtrl'
+    'teamCtrl',
     ]);
 
 
