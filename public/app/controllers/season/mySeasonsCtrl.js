@@ -39,4 +39,36 @@ angular.module('mySeasonsCtrl', ['seasonService'])
     //     // console.log(vm.mySeasons);
     //   });
 
+  })
+
+
+  // controller applied to edit a season title
+  .controller('seasonsEditController', function($routeParams, Season) {
+    var vm = this;
+
+    Season.get($routeParams.season_id)
+      .success(function(data) {
+        vm.seasonData = data;
+      });
+
+      // function to save the season
+    vm.saveSeason = function() {
+      vm.processing = true;
+      vm.message = '';
+      
+
+      // call the seasonService function to update
+      Season.update($routeParams.season_id, vm.seasonData)
+        .success(function(data) {
+          vm.processing = false;
+    // console.log('yo');
+
+          // clear the form
+          vm.userData = {};
+
+          // bind the message from our API to vm.message
+          vm.message = data.message;
+        });
+    }
+
   });

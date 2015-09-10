@@ -6,8 +6,30 @@
       <input class="form-control" type="text" ng-model="query" placeholder="Search">
       <button class="btn btn-success-outline" type="submit">Search</button>
     </form>
+    <form class="form-horizontal" ng-submit="game.saveSeason()">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" ng-model="game.seasonData.title">
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6">
+              <button type="submit" class="btn btn-success btn-lg btn-block">Update Season</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+    <div class="row show-hide-message" ng-show="season.message">
+      <div class="col-sm-6 col-sm-offset-2">
+        <div class="alert alert-info"> {{ season.message }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
 <br>
 <div class="row">
   <!--  <label>Search</label>

@@ -33,6 +33,12 @@ angular.module('app.routes', ['ngAnimate', 'ngRoute'])
         controllerAs: 'game'
     })
 
+    .when('/seasons/:season_id/edit', {
+        templateUrl: 'app/views/pages/seasons/single.html',
+        controller: 'seasonsEditController',
+        controllerAs: 'game'
+    })
+
     // route for the about page
     .when('/teams', {
         templateUrl: 'app/views/pages/teams/team.html',

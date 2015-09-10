@@ -83,7 +83,7 @@ module.exports = function(app, express) {
 
       // update the season's info only if it is new
       if (req.body.title) {
-        season.title = req.season.title;
+        season.title = req.body.title;
       }
 
       // save the season

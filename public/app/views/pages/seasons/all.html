@@ -12,7 +12,7 @@
     <tr ng-repeat="oneSeason in season.mySeasons">
       <td><a href="/seasons/{{ oneSeason._id }}">{{ oneSeason.title }}</a></td>
       <td><a href="/seasons/{{ oneSeason._id }}">{{ oneSeason.date_created }}</a></td>
-      <td><a href="#" ng-href="/seasons/{{ oneSeason._id }}"><i class="fa fa-pencil-square-o"></i></a></td>
+      <td><a href="#" ng-href="/seasons/{{ oneSeason._id }}/edit"><i class="fa fa-pencil-square-o"></i></a></td>
       <td><a href="#" ng-click="season.deleteSeason(oneSeason._id)"><i class="fa fa-trash-o"></i></a></td>
     </tr>
   </tbody>
