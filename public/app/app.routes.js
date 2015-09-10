@@ -33,8 +33,6 @@ angular.module('routerRoutes', ['ngRoute'])
         controllerAs: 'game'
     })
 
-
-
     // route for the about page
     .when('/teams', {
         templateUrl: 'app/views/pages/teams/team.html',

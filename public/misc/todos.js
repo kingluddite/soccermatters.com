@@ -1,3 +1,16 @@
+favicon
+click on games
+organize controllers angular
+figure out authentication
+figure out services
+figure out factories
+organize routes and controllers on server
+add teams pages
+add coaches pages
+add referees pages
+get field API working
+add weather API to game
+
 /*============================
 =            TODO            =
 ============================*/
