@@ -41,6 +41,26 @@ label {
   border-color: #BD4932;
   color: #FFFFFF; }
 
+/*========================================
+=            Route Animations            =
+========================================*/
+#content-views {
+  position: relative; }
+
+.ng-enter, .ng-leave {
+  width: 100%;
+  position: absolute; }
+
+.ng-enter {
+  -webkit-animation: zoomInDown 1.2s both ease-in;
+  -moz-animation: zoomInDown 1.2s both ease-in;
+  animation: zoomInDown 1.2s both ease-in; }
+
+.ng-leave {
+  -webkit-animation: zoomOutDown 0.5s both ease-in;
+  -moz-animation: zoomOutDown 0.5s both ease-in;
+  animation: zoomOutDown 0.5s both ease-in; }
+
 /*==============================
 =            footer            =
 ==============================*/
