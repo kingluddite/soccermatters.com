@@ -10,8 +10,7 @@
 ======================================*/
 
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 140px;
   background-color: $aqua;
   font-family: montserrat, arial, verdana;
 }
@@ -31,6 +30,54 @@ h2 {
 label {
   color: $aqua;
 }
+strong {
+  color: $light-yellow;
+}
+table, tr, td {
+  background-color: $white;
+}
+th {
+  background-color: $orange;
+  color: $mustard-yellow;
+}
+
+/* spinner animation */
+/* show and hide */
+.show-hide-message.ng-hide-remove {
+  -webkit-animation:zoomIn 0.3s both ease;
+  -moz-animation:zoomIn 0.3s both ease;
+  animation:zoomIn 0.3s both ease;
+}
+
+/* ANIMATIONS
+====================== */
+.spinner {
+  -webkit-animation:spin 1s infinite;
+  -moz-animation:spin 1s infinite;
+  animation:spin 1s infinite;
+}
+
+@keyframes spin {
+  from  { transform:rotate(0deg); }
+  to  { transform:rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  from  { -webkit-transform:rotate(0deg); }
+  to  { -webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+  from  { -moz-transform:rotate(0deg); }  
+  to  { -moz-transform:rotate(360deg); }
+}
+
+/* all content has this light transparent box on the bg */
+.view-container {
+   padding: 20px;
+   background: rgb(200, 54, 54); /* The Fallback */
+   background: rgba(255, 255, 255, 0.2); 
+}
 
 #logo {
   display: block;
@@ -42,6 +89,38 @@ label {
   border-color: $orange;
   color: $white;
 }
+
+/*========================================
+=            Route Animations            =
+========================================*/
+#content-views { position: relative; }
+
+.ng-enter, .ng-leave {
+  width: 100%;
+  position: absolute;
+}
+
+.ng-enter {
+  -webkit-animation:zoomInDown 1.2s both ease-in; 
+  -moz-animation:zoomInDown 1.2s both ease-in;
+  animation:zoomInDown 1.2s both ease-in;
+}
+
+.ng-leave {
+  -webkit-animation:zoomOutDown 0.5s both ease-in; 
+  -moz-animation:zoomOutDown 0.5s both ease-in;
+  animation:zoomOutDown 0.5s both ease-in;
+}
+
+/*=======================================
+=            Page Animations            =
+=======================================*/
+.show-hide-message.ng-hide-remove {
+  -webkit-animation:zoomIn 0.3s both ease;
+  -moz-animation:zoomIn 0.3s both ease;
+  animation:zoomIn 0.3s both ease;
+}
+
 
 /*==============================
 =            footer            =

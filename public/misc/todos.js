@@ -1,3 +1,41 @@
+add tournaments (copy)
+add current page on navigation
+add coaches pages (copy)
+add About page copy
+add referees pages (copy)
+add gear (copy - icebox functionality)
+clean up pages
+add auto increment to game
+minify with gulp
+clean up login/logout/register
+route to single game
+update trello
+[x]figure out authentication
+add processing animations
+organize routes and controllers on server
+tried and failed (favicon)
+clean up top of single season page
+get message to update screen when changes happen
+update readme
+add teams pages (crud)
+click on games and open that game
+you can add multiple controllers to one field (refactor)
+figure out how to temporarily turn off page animations when certain things happen
+add inline editing to make adding scores easier
+figure out show/hide
+get field API working (long lat)
+authentication on its own branch in case I cant get it to work
+add crud users and add 'admin boolean' (icebox)
+questions for adding a season (holidays, teams, divisions) - icebox functionality
+add array of players to game (icebox?)
+add scores to game (icebox?)
+add weather API to game (3rd Party Api - icebox)
+
+[x] logo soccer matters?
+[x] (figure out services)
+[x] (figure out factories)
+[x] (organize controllers angular)
+
 /*============================
 =            TODO            =
 ============================*/

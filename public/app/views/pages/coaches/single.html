@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1 ng-if="coach.type == 'create'">Add Coaching Post</h1>
+  <h1 ng-if="coach.type == 'edit'">Edit Coaching Post</h1>
+</div>
+<form class="form-horizontal" ng-submit="coach.savecoach()">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Name Of Event</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="coach.coachData.name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Event Description</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="coach.coachData.description">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-6">
+      <input type="password" class="form-control" ng-model="coach.coachData.password"> </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-success btn-lg btn-block" ng-if="coach.type == 'create'">Create coach</button>
+      <button type="submit" class="btn btn-success btn-lg btn-block" ng-if="coach.type == 'edit'">Update coach</button>
+    </div>
+  </div>
+</form>
+<div class="row show-hide-message" ng-show="coach.message">
+  <div class="col-sm-6 col-sm-offset-2">
+    <div class="alert alert-info"> {{ coach.message }}
+    </div>
+  </div>
+</div>
+

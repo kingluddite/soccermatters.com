@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,66 +10,134 @@
     <!-- set the base path for angular routing -->
     <base href="/">
     <!-- Place favicon.ico in the root directory -->
-
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="SoccerMatters">
+    <meta name="application-name" content="SoccerMatters">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"> -->
     <link rel="stylesheet" href="/assets/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/libs/animate.css/animate.min.css">
     <link rel="stylesheet" href="/assets/css/style.min.css">
 
+    <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="/assets/libs/angular/angular.min.js"></script>
     <script src="/assets/libs/angular-route/angular-route.min.js"></script>
     <script src="/assets/libs/angular-animate/angular-animate.min.js"></script>
-    <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/app/app.js"></script>
+
+    <!-- controllers -->
+    <script src="/app/controllers/mainCtrl.js"></script>
+    <script src="/app/controllers/aboutCtrl.js"></script>
+    <script src="/app/controllers/userCtrl.js"></script>
+    <script src="/app/controllers/homeCtrl.js"></script>
+    <script src="/app/controllers/registerCtrl.js"></script>
+    <script src="/app/controllers/schedulerCtrl.js"></script>
+    <script src="/app/controllers/soccerFieldCtrl.js"></script>
+    <script src="/app/controllers/teamCtrl.js"></script>
+    <script src="/app/controllers/season/mySeasonsCtrl.js"></script>
+    <script src="/app/controllers/season/mySeasonCtrl.js"></script>
     <script src="/app/app.routes.js"></script>
+    <script src="/app/app.js"></script>
     <script src="/assets/libs/moment/min/moment.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    
+    <!-- services -->
+    <script src="/app/services/authService.js"></script>
+    <script src="/app/services/userService.js"></script>
+    <script src="/app/services/seasonService.js"></script>
+    <script src="/app/services/soccerFieldService.js"></script>
 
-</head>
+  </head>
 
-<body class="container" ng-app="smApp" ng-controller="mainController as main">
-    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-        <a class="navbar-brand" href="/">SM</a>
-        <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/scheduler">Scheduler</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/fields">Fields</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item pull-right">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item pull-right">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
+  <body ng-app="smApp" ng-controller="mainController as main">
+    <!-- <nav class="navbar navbar-fixed-top navbar-light bg-faded">  -->
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded" ng-if="main.loggedIn">
+      <a class="navbar-brand" href="/"><img src="/assets/img/logo_50x50_shield.png" height="117" width="100" alt="Soccer Matters Logo Shield"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/scheduler">Scheduler</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/soccerfields">Fields</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/seasons">My Seasons</a>
+        </li>
+        <li ng-if="!main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="/login">{{ main.user.name}}</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="#" ng-click="main.doLogout()">Logout</a>
+        </li>
+        <li ng-if="!main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="/create">Register</a>
+        </li>
 
-        </ul>
-        <form class="form-inline navbar-form pull-right">
-            <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" type="submit">Search</button>
-        </form>
+      </ul>
     </nav>
-    <!-- <img id="logo" src="/assets/img/sm_logo.png" height="200" width="200" alt="SoccerMatters Logo">
- -->
-    <h1>{{main.pageTitle}}</h1>
+
     <div class="container">
-        <main>
-            <div ng-view></div>
-        </main>
+      <main>
+        <div id="content-views">
+            <div class="view-container" ng-view></div>
+        </div>
+      </main>
     </div>
     <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
-        <a class="navbar-brand" href="/"><em>Because Soccer Does Matter</em></a>
-    </nav>
-</body>
+      <a class="navbar-brand" href="/"><em>Because Soccer Does Matter | </em></a> 
+      <ul class="nav navbar-nav">
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/coaches">Coaches</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/coaches">Teams</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/coaches">Players</a>
+        </li>
+         <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/coaches">Equipment</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/coaches">Uniforms</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/referees">Referees</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/camps">Camps</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item">
+          <a class="nav-link" href="/tournaments">Tournaments</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="/login">Fundraising</a>
+        </li>
+        <!-- <li class="nav-item pull-right">
+          <a class="nav-link" href="/register">Contact</a>
+        </li> -->
 
+      </ul>
+    </nav>
+  </body>
 
 </html>
+

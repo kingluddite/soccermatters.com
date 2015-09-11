@@ -1,2 +1,6 @@
-<h1>{{ home.pageTitle }}</h1>
-<img id="logo" src="/assets/img/sm_logo.png" height="200" width="200" alt="SoccerMatters Logo">
+<img id="logo" src="/assets/img/logo_400x400.png" height="400" width="400" alt="SoccerMatters Logo">
+<br>
+<a class="btn btn-lg btn-primary btn-block" href="/login">
+    <span ng-if="!login.processing">Login</span>
+    <span ng-if="login.processing" class="spinner"><span class="glyphicon glyphicon-repeat"></span></span>
+    </a>

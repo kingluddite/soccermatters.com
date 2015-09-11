@@ -46,7 +46,110 @@ Link to Wireframes, User Stories
 https://github.com/crystalschang/gulp-env
 
 ## Unsolved Problems
+* Time
 
 ## Major Hurdles I had to overcome
 
 ## Future Of SoccerMatters
+**to be completed**
+[ ] route to single games
+
+[ ] add tournament posts
+
+[ ] add free agent list
+
+[ ] add coach training and licensing info
+
+[ ] connect to 3rd party equipment, shoes, uniforms
+
+[ ] add game reminder
+
+[ ] add 3rd party weather api for games
+
+[ ] players can rate a ref on games
+
+[ ] add players to games
+
+[ ] add scores to games
+
+[ ] minify with gulp
+
+[ ] add favicon
+
+[ ] add referees page
+
+[ ] clean up pages
+
+[ ] remove animations or make them more subtle
+
+[ ] add processing animations
+
+[ ] create alternate division games(no blending divisions)
+
+[ ] create holiday array
+
+[ ] does this work
+
+[ ] start date is not Saturday
+
+[ ] OOP refactor
+
+[ ] IIFE
+
+[ ] also create new divisions
+
+[ ] add holidays
+
+[ ] add start Da
+
+[ ] no - goes to create season schedule new form
+
+[ ] if yes, submit to schedule collection, schedule set to LIVE
+
+[ ] give ability to do CRUD on schedule with business rules
+
+[ ] admin can add / update scores
+
+[ ] 3 pts added
+
+[ ] win, 1 pt tie, 0 loss
+
+[ ] top 8 teams from each division go to playoffs
+
+[ ] players can use paypal to pay coaches
+
+[ ] coaches can use paypal to pay league
+
+[ ] league can use paypal to pay referees
+
+[ ] soccer uniforms and equipment API to buy soccer stuff
+
+[ ] coaches can auto email team members game reminder yes / no / maybe
+
+[ ] coaches can create drag drop starting lineup
+
+[ ] coaches can auto email players who have not paid
+
+[ ] coaches can add goals, assists, red and yellow cards
+
+[ ] coaches can add player numbers
+
+[ ] players can update profile, shows stats
+
+[ ] league can create seasons
+
+[ ] teams can see just their season schedule
+
+[ ] live link to update game reminder
+
+**completed**
+[x] Add login
+[x] About page copy
+[x] figure out authentication
+[x] logo soccer matters?
+[x] figure out services
+[x] figure out factories
+[x] organize controllers angular
+[x] update readme
+[x] Create Express App
+[x] if logged in as league admin allow to create new season

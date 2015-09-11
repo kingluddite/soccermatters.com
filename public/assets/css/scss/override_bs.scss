@@ -1,3 +1,11 @@
 .bg-faded {
   background-color: $orange;
 }
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: rgba(245,245,245,.8);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(245,245,245,.8);
+}

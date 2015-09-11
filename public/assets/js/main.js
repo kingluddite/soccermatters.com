@@ -395,6 +395,7 @@ $(document).ready(function() {
 
   // generate output to show the scheduled season is working properly
   $('#createSchedule').on('click', function() {
+    console.log('clicked');
     $('#destroySchedule').prop('disabled', false);
    $('.card-columns').empty();
    // on click generate the schedule
