@@ -10,7 +10,7 @@ minify with gulp
 clean up login/logout/register
 route to single game
 update trello
-figure out authentication
+[x]figure out authentication
 add processing animations
 organize routes and controllers on server
 tried and failed (favicon)
@@ -31,10 +31,10 @@ add array of players to game (icebox?)
 add scores to game (icebox?)
 add weather API to game (3rd Party Api - icebox)
 
-done - logo soccer matters?
-done (figure out services)
-done (figure out factories)
-done (organize controllers angular)
+[x] logo soccer matters?
+[x] (figure out services)
+[x] (figure out factories)
+[x] (organize controllers angular)
 
 /*============================
 =            TODO            =
