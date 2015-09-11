@@ -30,6 +30,16 @@ h2 {
 label {
   color: $aqua;
 }
+strong {
+  color: $light-yellow;
+}
+table, tr, td {
+  background-color: $white;
+}
+th {
+  background-color: $orange;
+  color: $mustard-yellow;
+}
 
 /* all content has this light transparent box on the bg */
 .view-container {

@@ -52,6 +52,6 @@ function geoFindMe() {
   navigator.geolocation.getCurrentPosition(success, error);
 }
 
-$('#shareMyField').on('click', function(evt) {
+// $('#shareMyField').on('click', function(evt) {
   
-});
+// });

@@ -5,11 +5,12 @@ angular.module('smApp', [
     'mySeasonsCtrl',
     'aboutCtrl',
     'homeCtrl',
-    'fieldCtrl',
     'loginCtrl',
     'registerCtrl',
     'schedulerCtrl',
     'teamCtrl',
+    'soccerFieldService',
+    'soccerFieldCtrl',
     'seasonService'
     ]);
 

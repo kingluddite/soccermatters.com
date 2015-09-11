@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema
 
 /*----------  field schema  ----------*/
-var SeasonFieldSchema = new Schema({
+var SeasonSchema = new Schema({
   fullSeason: Schema.Types.Mixed,
   title: { type: String, default: "Give Me A Season Name Please" }, 
   date_created: {
@@ -13,4 +13,4 @@ var SeasonFieldSchema = new Schema({
 });
 
 /*----------  return the model  ----------*/
-module.exports = mongoose.model('Season', SeasonFieldSchema);
+module.exports = mongoose.model('Season', SeasonSchema);

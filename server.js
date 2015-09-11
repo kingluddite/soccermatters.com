@@ -49,7 +49,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 =            APP DEFINED            =
 ===================================*/
 var app = express();
-
+// app.set('view engine', 'jade');
 // development only
 if ('development' == app.get('env')) {
   // app.set('mongodb_uri', 'mongo://localhost/dev');
@@ -113,8 +113,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // API ROUTES
 var apiRoutes     = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
-// app.use('/auth', authenticate);
-// app.use('/api', apiRoutes);
+  /*==============================
+=            FIELDS            =
+==============================*/
+
+  // on routes that in in /fields
+  // ------------------------------------------------------------ 
+
 
 // MAIN CATCH-ALL ROUTE-------
 // SEND USERS TO FRONTEND

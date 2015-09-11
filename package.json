@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Player Relationship Management",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/kingluddite/soccermatters.com.git"
@@ -53,6 +51,7 @@
     "compression": "^1.5.2",
     "cookie-parser": "^1.3.5",
     "express": "^4.13.3",
+    "jade": "^1.11.0",
     "mongoose": "^4.1.5",
     "path": "^0.11.14",
     "serve-favicon": "^2.3.0"

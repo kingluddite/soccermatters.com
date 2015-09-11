@@ -1,0 +1,33 @@
+<div class="row">
+  <h1>{{ soccerField.pageTitle }}</h1>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2>Share Your Field Location</h2>
+    <p>Help us build a world database of every soccer field on the planet.
+    </p>
+    <p>
+      <a id="shareMyField" class="btn btn-primary btn-lg">Share My location</a>
+    </p>
+    <div id="field"></div>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2>Soccer Field Directory</h2>
+    <table class="table table-bordered" >
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="oneField in soccerField.mySoccerFields">
+          <td><a href="https://maps.googleapis.com/maps/api/staticmap?center={{oneField.latitude}},{{oneField.longitude}}&zoom=13&size=300x300&sensor=false">{{ oneField.name }}</a></td>
+          <td><a href="#" ng-href="/seasons/{{ oneField._id }}/edit"><i class="fa fa-pencil-square-o"></i></a></td>
+          <td><a href="#" ng-click="season.deleteField(oneField._id)"><i class="fa fa-trash-o"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

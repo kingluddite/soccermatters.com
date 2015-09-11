@@ -75,10 +75,10 @@ angular.module('app.routes', ['ngAnimate', 'ngRoute'])
     })
 
     // route for the about page
-    .when('/fields', {
-        templateUrl: 'app/views/pages/fields/field.html',
-        controller: 'fieldController',
-        controllerAs: 'field'
+    .when('/soccerfields', {
+        templateUrl: 'app/views/pages/soccerfields/all.html',
+        controller: 'soccerFieldController',
+        controllerAs: 'soccerField'
     })
     
     // fallback mechanism that applies to all requests that do not

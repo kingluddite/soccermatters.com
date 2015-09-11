@@ -1,4 +1,5 @@
 add tournaments (copy)
+add current page on navigation
 add coaches pages (copy)
 add About page copy
 add referees pages (copy)

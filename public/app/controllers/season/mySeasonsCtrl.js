@@ -4,6 +4,8 @@ angular.module('mySeasonsCtrl', ['seasonService'])
     vm.pageTitle = "My Seasons";
 
     vm.processing = true;
+
+    // Show all seasons
     Season.all()
       .success(function(data) {
 
@@ -13,9 +15,10 @@ angular.module('mySeasonsCtrl', ['seasonService'])
         vm.mySeasons = data;
       });
 
+    // Delete a season
     vm.deleteSeason = function(id) {
       vm.processing = true;
-       console.log('yo');
+
       // accepts the season id as a parameter
       Season.delete(id)
          .success(function(data) {

@@ -38,12 +38,11 @@
     <!-- controllers -->
     <script src="/app/controllers/mainCtrl.js"></script>
     <script src="/app/controllers/aboutCtrl.js"></script>
-    <script src="/app/controllers/fieldCtrl.js"></script>
     <script src="/app/controllers/homeCtrl.js"></script>
     <script src="/app/controllers/loginCtrl.js"></script>
-    <script src="/app/controllers/loginCtrl.js"></script>
     <script src="/app/controllers/registerCtrl.js"></script>
-    <script src="/app/controllers/schedulerCtrl.js"></script>/
+    <script src="/app/controllers/schedulerCtrl.js"></script>
+    <script src="/app/controllers/soccerfieldCtrl.js"></script>
     <script src="/app/controllers/teamCtrl.js"></script>
     <script src="/app/controllers/season/mySeasonsCtrl.js"></script>
     <script src="/app/controllers/season/mySeasonCtrl.js"></script>
@@ -53,6 +52,7 @@
     
     <!-- services -->
     <script src="/app/services/seasonService.js"></script>
+    <script src="/app/services/soccerFieldService.js"></script>
 
   </head>
 
@@ -67,7 +67,7 @@
           <a class="nav-link" href="/scheduler">Scheduler</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/fields">Fields</a>
+          <a class="nav-link" href="/soccerfields">Fields</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
@@ -93,7 +93,40 @@
       </main>
     </div>
     <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
-      <a class="navbar-brand" href="/"><em>Because Soccer Does Matter</em></a>
+      <a class="navbar-brand" href="/"><em>Because Soccer Does Matter | </em></a> 
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/coaches">Coaches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaches">Teams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaches">Players</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/coaches">Equipment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaches">Uniforms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/referees">Referees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/camps">Camps</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tournaments">Tournaments</a>
+        </li>
+        <li class="nav-item pull-right">
+          <a class="nav-link" href="/login">Fundraising</a>
+        </li>
+        <li class="nav-item pull-right">
+          <a class="nav-link" href="/register">Contact</a>
+        </li>
+
+      </ul>
     </nav>
   </body>
 

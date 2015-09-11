@@ -32,6 +32,16 @@ h2 {
 label {
   color: #105B63; }
 
+strong {
+  color: #FFD34E; }
+
+table, tr, td {
+  background-color: #FFFFFF; }
+
+th {
+  background-color: #BD4932;
+  color: #FFFAD5; }
+
 /* all content has this light transparent box on the bg */
 .view-container {
   padding: 20px;

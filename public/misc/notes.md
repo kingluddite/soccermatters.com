@@ -145,7 +145,26 @@ NPM
 * Easily implement RESTful conventions using ':' notation to specify models/objects base on URL
 * Easily respond with all types of data such as JSON, xml etc
 
+## Notes from HTML Field Location Share
+// https://github.com/occasl/mongodb-poc
+        // https://loutilities.wordpress.com/2012/08/10/dogtag-app-in-30-minutes-part-1-node-js-and-mongodb/
+        // http://blog.robertonodi.me/how-to-use-geospatial-indexing-in-mongodb-using-express-and-mongoose/
 
+        // so the person arrives at a soccer field and they want to
+        // publish the location using soccermatters share my field api
+        // after they click the button they have to agree to share their
+        // location and then we wait for a successs
+        // once we get success, we post to my soccerfield API
+        // which takes the geolocation long and lat
+        // and posts it to the local soccermatters mongodb
+        // we can also search by name (I will add a search box that will
+        //   find a field by name)
+        //  you can also find a field which will grab your geo location
+        //  and find the closest field to you
+        // you need to run, mongod on port 27017
+        // you need to run nodemon on your express app
+        // you need to run http-server on your local server
+        // something like: http://localhost:8081/geolocate.html
 
 
 
