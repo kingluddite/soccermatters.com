@@ -6,6 +6,11 @@ module.exports = function(app, express) {
   // get instance of the express router
   var apiRouter = express.Router();
 
+  // set the /api to show json
+  apiRouter.get('/', function(req, res) {
+    res.json({ message: 'Welcome to the SoccerMatters API'});
+  });
+
   apiRouter.use(function(req, res, next) {
     console.log('Somebody is knocking!');
     next();
