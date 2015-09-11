@@ -3,6 +3,7 @@
 
 // CALL THE PACKAGES ----------------
 var express      = require('express'),
+    app          = express(), // define our app using express
     path         = require('path'),
     favicon      = require('serve-favicon'),
     cookieParser = require('cookie-parser'),
@@ -10,18 +11,11 @@ var express      = require('express'),
     // morgan       = require('morgan'), // used to see requests
     mongoose     = require('mongoose'), // db helper
     compress     = require('compress'),
-    config       = require('./config');
+    config       = require('./config'),
+    jwt          = require('jsonwebtoken');
 
-// default to DEV environmetn
+// default to DEV env
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-    /*======================================
-    =            AUTHENTICATION            =
-    ======================================*/    
-    // passport     = require('passport'),
-    // session      = require('express-session'),
-    // authenticate = require('./routes/authenticate')(passport);
-    // jwt          = require('jsonwebtoken');
 
 /*=========================================
 =            APP CONFIGURATION            =
@@ -33,23 +27,18 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 //     process.exit(0);
 // });
 
+
 /*==============================
 =            ROUTES            =
 ==============================*/
 // loading routes defined in the /routes folder
 // var routes = require('./routes/index');
-// var authenticate = require('./routes/authenticate')(passport);
+// API ROUTES
+var apiRoutes     = require('./app/routes/api')(app, express);
 
 /*==========================
 =            DB            =
 ==========================*/
-
-
-/*===================================
-=            APP DEFINED            =
-===================================*/
-var app = express();
-// app.set('view engine', 'jade');
 // development only
 if ('development' == app.get('env')) {
   // app.set('mongodb_uri', 'mongo://localhost/dev');
@@ -72,6 +61,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+/*===============================
+=            CORS            =
+===============================*/
 /*----------  configure our app to handle CORS requests  ----------*/
 // Cross-Origin Resource Sharing (CORS)
 // allow requests from other domains to prevent CORS errors
@@ -90,18 +82,7 @@ app.use(cookieParser());
 // set the public folder to serve public assets
 app.use(express.static(path.join(__dirname, 'public')));
 
-// needs to be passport.initialize first
-//  and then passport.session second
-//  if you reverse, it will choke the app
-// app.use(passport.initialize());
-// app.use(passport.session());
-
 // insert middleware that points to our route definitions
-
-// // Intialize Passport
-// var initPassport = require('./passport-init');
-// initPassport(passport);
-
 /*----------  log all requests to the console  ----------*/
 // if (process.env.NODE_ENV === 'development') {
   /*----------  log all requests to the console  ----------*/
@@ -110,16 +91,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   // app.use(compress());
 // }
 
-// API ROUTES
-var apiRoutes     = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
-  /*==============================
-=            FIELDS            =
-==============================*/
-
-  // on routes that in in /fields
-  // ------------------------------------------------------------ 
-
 
 // MAIN CATCH-ALL ROUTE-------
 // SEND USERS TO FRONTEND
@@ -171,4 +143,4 @@ module.exports = app;
 // START THE SERVER
 // ==================================
 app.listen(config.port);
-console.log('SoccerMatters! ' + config.port);
+console.log('SoccerMatters - kick\' it at port ' + config.port);

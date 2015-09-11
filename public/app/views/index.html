@@ -39,10 +39,9 @@
     <script src="/app/controllers/mainCtrl.js"></script>
     <script src="/app/controllers/aboutCtrl.js"></script>
     <script src="/app/controllers/homeCtrl.js"></script>
-    <script src="/app/controllers/loginCtrl.js"></script>
     <script src="/app/controllers/registerCtrl.js"></script>
     <script src="/app/controllers/schedulerCtrl.js"></script>
-    <script src="/app/controllers/soccerfieldCtrl.js"></script>
+    <script src="/app/controllers/soccerFieldCtrl.js"></script>
     <script src="/app/controllers/teamCtrl.js"></script>
     <script src="/app/controllers/season/mySeasonsCtrl.js"></script>
     <script src="/app/controllers/season/mySeasonCtrl.js"></script>
@@ -51,13 +50,16 @@
     <script src="/assets/libs/moment/min/moment.min.js"></script>
     
     <!-- services -->
+    <script src="/app/services/authService.js"></script>
+    <script src="/app/services/userService.js"></script>
     <script src="/app/services/seasonService.js"></script>
     <script src="/app/services/soccerFieldService.js"></script>
 
   </head>
 
   <body ng-app="smApp" ng-controller="mainController as main">
-    <nav class="navbar navbar-fixed-top navbar-light bg-faded clearfix">
+    <!-- <nav class="navbar navbar-fixed-top navbar-light bg-faded">  -->
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded" ng-if="main.loggedIn">
       <a class="navbar-brand" href="/"><img src="/assets/img/logo_50x50_shield.png" height="117" width="100" alt="Soccer Matters Logo Shield"></a>
       <ul class="nav navbar-nav">
         <li class="nav-item active">
@@ -75,8 +77,14 @@
         <li class="nav-item">
           <a class="nav-link" href="/seasons">My Seasons</a>
         </li>
-        <li class="nav-item pull-right">
+        <li ng-if="!main.loggedIn" class="nav-item pull-right">
           <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="/login">{{ main.user.name}}</a>
+        </li>
+        <li ng-if="main.loggedIn" class="nav-item pull-right">
+          <a class="nav-link" href="#" ng-click="main.doLogout()">Logout</a>
         </li>
         <li class="nav-item pull-right">
           <a class="nav-link" href="/register">Register</a>
