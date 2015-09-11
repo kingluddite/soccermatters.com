@@ -48,15 +48,15 @@ angular.module('soccerFieldCtrl', ['soccerFieldService'])
         var longitude = position.coords.longitude;
 
         // $http.get("/api/soccerfields");
-        $.post("/api/soccerfields", {
+        $http.post("/api/soccerfields", {
             latitude: latitude,
             longitude: longitude
-          })
-          .done(function(data) {
-            console.log("Data Loaded: " + data);
-          }).fail(function() {
-            console.log("fail: you screwed something up")
           });
+          // .done(function(data) {
+          //   console.log("Data Loaded: " + data);
+          // }).fail(function() {
+          //   console.log("fail: you screwed something up")
+          // });
 
         yourField.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 

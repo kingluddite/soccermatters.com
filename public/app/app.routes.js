@@ -46,6 +46,27 @@ angular.module('app.routes', ['ngAnimate', 'ngRoute'])
         controllerAs: 'team'
     })
 
+    // show all users
+    .when('/users', {
+      templateUrl: 'app/views/pages/users/all.html',
+      controller: 'userController',
+      controllerAs: 'user'
+    })
+
+    // form to create a new user // same view as edit page 
+    .when('/users/create', {
+      templateUrl: 'app/views/pages/users/single.html',
+      controller: 'userCreateController',
+      controllerAs: 'user'
+    })
+
+    //pagetoeditauser
+    .when('/users/:user_id', {
+      templateUrl: 'app/views/pages/users/single.html',
+      controller: 'userEditController',
+      controllerAs: 'user'
+    })
+
     // route for the about page
     .when('/scheduler', {
         templateUrl: 'app/views/pages/scheduler/scheduler.html',

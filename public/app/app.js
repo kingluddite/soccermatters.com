@@ -7,6 +7,7 @@ angular.module('smApp', [
     'mySeasonCtrl',
     'mySeasonsCtrl',
     'aboutCtrl',
+    'userCtrl',
     'homeCtrl',
     'registerCtrl',
     'schedulerCtrl',
