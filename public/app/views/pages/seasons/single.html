@@ -1,25 +1,18 @@
+    <h1>{{game.pageTitle}}</h1>
 <div class="row">
   <div class="col-xs-6">
-    {{game.pageTitle}}</div>
+<form class="form-inline navbar-form pull-left" ng-submit="game.saveSeason()">
+      <input class="form-control" type="text" ng-model="game.seasonData.title" placeholder="Search">
+      <button class="btn btn-success-outline" type="submit">Update</button>
+    </form>
+    
+    </div>
   <div class="col-xs-6">
     <form class="form-inline navbar-form pull-right">
       <input class="form-control" type="text" ng-model="query" placeholder="Search">
       <button class="btn btn-success-outline" type="submit">Search</button>
     </form>
-    <form class="form-horizontal" ng-submit="game.saveSeason()">
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" ng-model="game.seasonData.title">
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-6">
-              <button type="submit" class="btn btn-success btn-lg btn-block">Update Season</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </form>
+    
     <div class="row show-hide-message" ng-show="season.message">
       <div class="col-sm-6 col-sm-offset-2">
         <div class="alert alert-info"> {{ season.message }}

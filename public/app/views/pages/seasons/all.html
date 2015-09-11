@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="oneSeason in season.mySeasons">
+    <tr ng-repeat="oneSeason in season.mySeasons | orderBy: 'date_created':true">
       <td><a href="/seasons/{{ oneSeason._id }}">{{ oneSeason.title }}</a></td>
       <td><a href="/seasons/{{ oneSeason._id }}">{{ oneSeason.date_created | date: fullDate }}</a></td>
       <td><a href="#" ng-href="/seasons/{{ oneSeason._id }}/edit"><i class="fa fa-pencil-square-o"></i></a></td>

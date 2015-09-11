@@ -3,7 +3,7 @@ angular.module('mySeasonCtrl', [])
         // console.log($routeParams.season_id);
     var seasonId = $routeParams.season_id;
     var vm = this;
-    // vm.pageTitle = "My Season";
+    vm.pageTitle = "My Season";
 
     $http.get('/api/seasons/' + seasonId)
       .then(function(data) {
