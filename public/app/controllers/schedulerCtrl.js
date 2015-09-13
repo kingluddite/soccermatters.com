@@ -413,7 +413,7 @@ angular.module('schedulerCtrl', [])
             =======================================================*/
 
             generateSchedule(divisions, gameTimes, 11);
-            // console.log(season);
+            console.log(season);
             // $.post(season);
             // $.ajax({
             // url: '/api/seasons',
