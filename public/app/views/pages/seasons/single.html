@@ -29,5 +29,11 @@
       <input type="search" class="form-control" ng-model="query" placeholder="search..."> -->
     <div class="card-columns">
         <div ng-repeat="game in game.mySeasonGames | filter:query" class="card">
+            <div ng-if="game.gameStatus == 'HOLIDAY'" class="card card-block card-inverse card-primary text-center">
+                <blockquote class="card-blockquote">
+                    <p>Holiday</p>
+                    <footer><small>{{ game.gameDate | date: 'EEEE, MMMM d, y'}}</small></footer>
+                </blockquote>
+            </div>
             <div class="card-header"> Game# {{game.gameNum}}<span class="pull-right text-muted">Week#  {{game.weekNum}}</div><div class="card-block"><blockquote class="card-blockquote text-center"><p> {{game.awayTeam}}<br/> @ <br> {{game.homeTeam}} </p><footer><small class="text-muted">Game Time <cite title="Game Time"> @  {{game.gameTime}}<br> {{game.gameDate | date: 'EEEE, MMMM d, y'}}</cite></small></footer></blockquote><small class="card-text text-center"></small><small class="pull-left text-muted"> {{game.gameStatus}}</small><small class="pull-right text-muted">Aviation Field</small></div><!--END card --></div>
 </div>
